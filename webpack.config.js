@@ -6,7 +6,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');   // new line!
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: '[name]/bundle.js',
+    filename: 'main/bundle.js',  // Ensure the output filename matches the path in index.html
     path: path.resolve(__dirname, 'docs'),
     publicPath: '/',
   },
