@@ -22,11 +22,11 @@ class Ui {
     let output = '<h2>All Leagues</h2><ul>';
     paginatedLeagues.forEach(league => {
       output += `
-        <li>
-          <h3>${league.strLeague}</h3>
-          <p>Sport: ${league.strSport}</p>
-          <p>Alternate Names: ${league.strLeagueAlternate || 'N/A'}</p>
-        </li>`;
+                <li>
+                    <h3>${league.strLeague}</h3>
+                    <p>Sport: ${league.strSport}</p>
+                    <p>Alternate Names: ${league.strLeagueAlternate || 'N/A'}</p>
+                </li>`;
     });
     output += '</ul>';
 
