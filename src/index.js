@@ -1,5 +1,6 @@
 // Import the main application class
 import App from './js/app';
+import './css/global.css';
 import './css/styles.css';
 
 // Wait for the DOM to be fully loaded before initializing the app
