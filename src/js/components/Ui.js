@@ -1,3 +1,4 @@
+import '../../css/ui.css';
 class Ui {
   constructor() {
     this.content = document.getElementById('main');
