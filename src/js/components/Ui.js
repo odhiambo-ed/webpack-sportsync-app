@@ -3,6 +3,7 @@ import '../../css/ui.css';
 class Ui {
   constructor() {
     this.content = document.getElementById('main');
+    this.teamsContainer = document.getElementById('teamsContainer');
     this.leagues = [];
     this.itemsPerPage = 5;
     this.currentPage = 1;
@@ -31,7 +32,7 @@ class Ui {
     output += '</ul>';
 
     if (end < this.leagues.length) {
-      output += '<button id="loadMore">Load More</button>';
+      output += '<button id="loadMoreLeagues">Load More Leagues</button>';
     }
 
     this.content.innerHTML = output;
@@ -39,7 +40,7 @@ class Ui {
   }
 
   addLoadMoreEvent() {
-    const loadMoreBtn = document.getElementById('loadMore');
+    const loadMoreBtn = document.getElementById('loadMoreLeagues');
     if (loadMoreBtn) {
       loadMoreBtn.addEventListener('click', () => this.loadMoreLeagues());
     }
@@ -48,6 +49,27 @@ class Ui {
   loadMoreLeagues() {
     this.currentPage++;
     this.renderLeagues();
+  }
+
+  displayTeams(teams) {
+    if (!this.teamsContainer) {
+      // console.error("Teams container not found.");
+      return;
+    }
+
+    teams.forEach(team => {
+      const teamCard = document.createElement('div');
+      teamCard.className = 'col-md-3 team-card animate__animated animate__fadeInUp';
+      teamCard.innerHTML = `
+        <div class="card">
+          <img src="${team.strTeamBadge}" class="card-img-top" alt="${team.strTeam}">
+          <div class="card-body">
+            <h5 class="card-title">${team.strTeam}</h5>
+            <p class="card-text">${team.strStadium}</p>
+          </div>
+        </div>`;
+      this.teamsContainer.appendChild(teamCard);
+    });
   }
 
   showError(message) {
