@@ -1,24 +1,12 @@
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./css/styles.css";
-import "./js/app";
+// Import the main application class
+import App from './js/app';
+import './css/styles.css';
 
-// Function to create and append content to the #app div
-function createAppContent() {
-    // Access the div with id="app"
-    const appDiv = document.getElementById('app');
+// Wait for the DOM to be fully loaded before initializing the app
+document.addEventListener('DOMContentLoaded', () => {
+  // Create a new instance of the App class
+  const app = new App();
 
-    // Create an h1 element
-    const heading = document.createElement('h1');
-    heading.textContent = 'Hello, Webpack!';
-
-    // Create a p element
-    const paragraph = document.createElement('p');
-    paragraph.textContent = 'This is a basic Webpack setup.';
-
-    // Append the heading and paragraph to the appDiv
-    appDiv.appendChild(heading);
-    appDiv.appendChild(paragraph);
-}
-
-createAppContent();
+  // Initialize the app
+  app.init();
+});
