@@ -11,8 +11,8 @@ class App {
   // Initialize the app
   async init() {
     try {
-      const sports = await this.api.getAllLeagues();
-      this.ui.showSports(sports);
+      const leagues = await this.api.getAllLeagues();
+      this.ui.displaySports(leagues);
     } catch (error) {
     //   console.error('Error fetching sports data:', error);
       this.ui.showError('Failed to load sports data. Please try again later.');
