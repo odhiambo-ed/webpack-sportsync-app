@@ -1,6 +1,9 @@
 {
   "name": "webpack-sportsync-app",
   "version": "1.0.0",
+  "repository": {
+   "url": "git+https://github.com/odhiambo-ed/webpack-sportsync-app.git"
+ },
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,7 +12,8 @@
     "webpackServer": "webpack-dev-server --open --mode=development",
     "lint": "eslint src --ext .js",
     "start": "npm run build && npm run webpackServer",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build",
+   "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
