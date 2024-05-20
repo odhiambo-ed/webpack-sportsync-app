@@ -7,7 +7,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',  // Ensure the output filename matches the path in index.html
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
   },
   devtool: 'eval-source-map',
@@ -48,7 +48,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'docs'),
+      directory: path.join(__dirname, 'dist'),
     },
     port: 9000,
     historyApiFallback: true,
