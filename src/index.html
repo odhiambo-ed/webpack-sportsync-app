@@ -5,8 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/images/favicon.ico">
     <title>Sport Sync App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
-    <div id="main"></div>
+    <div class="container">
+        <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand animate__animated animate__fadeInDown" href="#">Sports Sync App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#teams">Teams</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero text-center d-flex align-items-center justify-content-center">
+        <div class="container">
+            <h1 class="display-4 animate__animated animate__fadeInUp">Welcome to Sports Sync App</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Your one-stop solution for all sports updates and statistics</p>
+            <a href="#features" class="btn btn-primary btn-lg animate__animated animate__fadeInUp animate__delay-2s">Learn More</a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section text-center">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInUp">About Sports Sync App</h2>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Sports Sync App provides real-time updates, comprehensive statistics, and detailed information about your favorite sports, leagues, teams, and players.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section bg-light text-center">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInUp">Features</h2>
+            <div class="row">
+                <div class="col-md-4 animate__animated animate__zoomIn">
+                    <h3>Real-Time Scores</h3>
+                    <p>Get live scores for all your favorite sports events.</p>
+                </div>
+                <div class="col-md-4 animate__animated animate__zoomIn animate__delay-1s">
+                    <h3>Player Stats</h3>
+                    <p>Detailed statistics for every player in the league.</p>
+                </div>
+                <div class="col-md-4 animate__animated animate__zoomIn animate__delay-2s">
+                    <h3>Event Highlights</h3>
+                    <p>Watch video highlights of past events.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leagues Section -->
+    <section id="leagues" class="section text-center">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInUp">All Leagues</h2>
+            <div class="row" id="teamsContainer" class="animate__animated animate__fadeInUp">
+                <div id="main"></div>
+            </div>
+            <button id="loadMore" class="btn btn-primary mt-4 animate__animated animate__fadeInUp">Load More</button>
+        </div>
+    </section>
+
+    <!-- Teams Section -->
+    <section id="teams" class="section text-center">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInUp">Teams</h2>
+            <div class="row" id="teamsContainer" class="animate__animated animate__fadeInUp">
+                <!-- Teams will be dynamically inserted here -->
+            </div>
+            <button id="loadMore" class="btn btn-primary mt-4 animate__animated animate__fadeInUp">Load More</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light text-center">
+        <div class="container">
+            <h2 class="animate__animated animate__fadeInUp">Contact Us</h2>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">Email: support@sportssyncapp.com</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            &copy; 2024 Sports Sync App. All Rights Reserved.
+        </div>
+    </footer>
+    </div>
 </body>
 </html>
