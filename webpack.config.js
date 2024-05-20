@@ -1,58 +1,55 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');   // new line!
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'main/bundle.js',  // Ensure the output filename matches the path in index.html
-    path: path.resolve(__dirname, 'docs'),
-    publicPath: '/',
+    filename: 'bundle.js',  // The output filename for the bundled JavaScript
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',  // The public URL of the output directory when referenced in a browser
   },
-  devtool: 'eval-source-map',
+  devtool: 'eval-source-map',  // Source map mode for development
   plugins: [
-    new ESLintPlugin(),
-    new CleanWebpackPlugin({ verbose: true }),
+    new ESLintPlugin(),  // Plugin for linting JavaScript
+    new CleanWebpackPlugin({ verbose: true }),  // Clean the output directory before emit
     new HtmlWebpackPlugin({
-      title: 'Webpack',
-      template: './src/index.html',
-      inject: 'body'
+      title: 'Sport Sync App',  // The title of the generated HTML page
+      template: './src/index.html',  // Template file for the HTML
+      inject: 'body'  // Inject all assets into the body element
     })
   ],
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/,  // Test for CSS files
         use: [
-          'style-loader',
-          'css-loader'
+          'style-loader',  // Inject CSS into the DOM
+          'css-loader'  // Translates CSS into CommonJS
         ]
       },
       {
-        test: /\.(gif|png|avif|jpe?g)$/,
-        type: "asset/resource",
+        test: /\.(gif|png|avif|jpe?g)$/,  // Test for image files
+        type: 'asset/resource',  // The type of module created
         generator: {
-          filename: "[name][ext]",
-          publicPath: "assets/images/",
-          outputPath: "assets/images/",
+          filename: 'assets/images/[name][ext]',  // Output path and filename for images
         },
       },
       {
-        test: /\.html$/,
+        test: /\.html$/,  // Test for HTML files
         use: [
-          'html-loader'
+          'html-loader'  // Exports HTML as a string
         ]
       },
     ]
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'docs'),
+      directory: path.join(__dirname, 'dist'),  // Directory for static files
     },
-    port: 9000,
-    historyApiFallback: true,
-    open: true,
+    port: 9000,  // Port for the development server
+    historyApiFallback: true,  // Enable support for history API fallback
+    open: true,  // Open the browser after server starts
   },
-
 };
