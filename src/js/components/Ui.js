@@ -11,6 +11,10 @@ class Ui {
     output += '</ul>';
     this.content.innerHTML = output;
   }
+    
+  showError(message) {
+    this.content.innerHTML = `<div class="error">${message}</div>`;
+  }
 }
 
 export default Ui;
