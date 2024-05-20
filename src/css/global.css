@@ -1,17 +1,11 @@
-Global CSS
-:root {
+Global CSS :root {
   /* Color Variables */
-  --primary-color: #007bff; /* Change to your primary color */
-  --secondary-color: #6c757d; /* Change to your secondary color */
-  --text-color: #333; /* Change to your text color */
-  
-  /* Font Variables */
-  --font-family: 'Roboto', sans-serif; /* Change to your preferred font */
-}
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --text-color: #333;
 
-/* Reset */
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
-  
+  /* Font Variables */
+  --font-family: "Roboto", sans-serif;
 }
 
 /* Typography */
@@ -33,7 +27,8 @@ a:hover {
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -43,7 +38,12 @@ p {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 0.5em;
 }
 
