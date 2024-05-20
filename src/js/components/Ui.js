@@ -1,11 +1,11 @@
 class Ui {
   constructor() {
-    this.content = document.getElementById('content');
+    this.content = document.getElementById('main');
   }
 
-  displaySports(sports) {
-    let output = '<h2>All Sports</h2><ul>';
-    sports.forEach(sport => {
+  displayleagues(leagues) {
+    let output = '<h2>All Leagues</h2><ul>';
+    leagues.forEach(sport => {
       output += `<li>${sport.strSport}</li>`;
     });
     output += '</ul>';
