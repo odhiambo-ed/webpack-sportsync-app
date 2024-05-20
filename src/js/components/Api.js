@@ -10,6 +10,11 @@ class SportsDataAPI {
         return response.data.sports;
     }
 
+
+    async searchTeams(teamName) {
+        const response = await axios.get(`${this.baseURL}searchteams.php?t=${teamName}`);
+        return response.data.teams;
+    }
 }
 
 export default SportsDataAPI;
