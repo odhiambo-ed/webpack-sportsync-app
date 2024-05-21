@@ -1,3 +1,8 @@
+@import "@fontsource/poppins/400.css";
+/* Regular */
+@import "@fontsource/poppins/700.css";
+/* Bold */
+
 Global CSS :root {
   /* Color Variables */
   --primary-color: #007bff;
@@ -5,7 +10,7 @@ Global CSS :root {
   --text-color: #333;
 
   /* Font Variables */
-  --font-family: "Roboto", sans-serif;
+  --font-family: 'Poppins', sans-serif;
 }
 
 /* Typography */
@@ -37,28 +42,3 @@ p {
   margin-bottom: 1em;
 }
 
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 0.5em;
-}
-
-/* Form Elements */
-input[type="text"],
-input[type="email"],
-input[type="password"],
-textarea,
-select {
-  /* Add your styles here */
-}
-
-/* Buttons */
-button,
-input[type="button"],
-input[type="submit"] {
-  /* Add your styles here */
-}
