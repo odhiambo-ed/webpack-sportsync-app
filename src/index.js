@@ -2,6 +2,7 @@
 import App from './js/app';
 import './css/global.css';
 import './css/styles.css';
+import 'bootstrap';
 
 
 // Wait for the DOM to be fully loaded before initializing the app
