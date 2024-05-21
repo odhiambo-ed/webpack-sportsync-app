@@ -1,7 +1,7 @@
 // Import the main application class
 import App from './js/app';
-import './css/global.css';
-import './css/styles.css';
+import './style/global.scss';
+import './style/styles.scss';
 import 'bootstrap';
 
 

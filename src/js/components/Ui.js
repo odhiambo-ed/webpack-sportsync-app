@@ -1,4 +1,4 @@
-import '../../css/ui.css';
+import '../../style/ui.scss';
 
 class Ui {
   constructor() {

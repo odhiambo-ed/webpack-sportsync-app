@@ -1,4 +1,4 @@
-import '../css/ui.css';
+import '../style/ui.scss';
 import SportsDataAPI from './components/Api';
 import Ui from './components/Ui';
 
