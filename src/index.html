@@ -11,9 +11,9 @@
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Sports Sync App</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -25,24 +25,13 @@
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <a class="nav-link" href="#">Features</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -54,7 +43,7 @@
         </nav>
 
         <!-- Hero Section -->
-        <header class="hero text-center d-flex align-items-center justify-content-center">
+        <header class="hero text-center d-flex align-items-center justify-content-center vh-100">
             <div class="container">
                 <h1 class="display-4 animate__animated animate__fadeInUp">Welcome to Sports Sync App</h1>
                 <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Your one-stop solution for all
@@ -65,7 +54,7 @@
         </header>
 
         <!-- About Section -->
-        <section id="about" class="section text-center">
+        <section id="about" class="section text-center my-5">
             <div class="container">
                 <h2 class="animate__animated animate__fadeInUp">About Sports Sync App</h2>
                 <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Sports Sync App provides real-time
@@ -75,7 +64,7 @@
         </section>
 
         <!-- Features Section -->
-        <section id="features" class="section bg-light text-center">
+        <section id="features" class="section bg-light text-center my-5">
             <div class="container">
                 <h2 class="animate__animated animate__fadeInUp">Features</h2>
                 <div class="row">
@@ -96,31 +85,31 @@
         </section>
 
         <!-- Leagues Section -->
-        <section id="leagues" class="section text-center">
+        <section id="leagues" class="section text-center my-5">
             <div class="container">
                 <h2 class="animate__animated animate__fadeInUp">All Leagues</h2>
-                <div class="row" id="teamsContainer" class="animate__animated animate__fadeInUp">
-                    <div id="main"></div>
+                <div class="row" id="leaguesContainer" class="animate__animated animate__fadeInUp">
+                    <!-- Leagues will be dynamically inserted here -->
                 </div>
-                <button id="loadMore" class="btn btn-primary mt-4 animate__animated animate__fadeInUp">Load
+                <button id="loadMoreLeagues" class="btn btn-primary mt-4 animate__animated animate__fadeInUp">Load
                     More</button>
             </div>
         </section>
 
         <!-- Teams Section -->
-        <section id="teams" class="section text-center">
+        <section id="teams" class="section text-center my-5">
             <div class="container">
                 <h2 class="animate__animated animate__fadeInUp">Teams</h2>
                 <div class="row" id="teamsContainer" class="animate__animated animate__fadeInUp">
                     <!-- Teams will be dynamically inserted here -->
                 </div>
-                <button id="loadMore" class="btn btn-primary mt-4 animate__animated animate__fadeInUp">Load
+                <button id="loadMoreTeams" class="btn btn-primary mt-4 animate__animated animate__fadeInUp">Load
                     More</button>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="section bg-light text-center">
+        <section id="contact" class="section bg-light text-center my-5">
             <div class="container">
                 <h2 class="animate__animated animate__fadeInUp">Contact Us</h2>
                 <p class="animate__animated animate__fadeInUp animate__delay-1s">Email: support@sportssyncapp.com</p>
