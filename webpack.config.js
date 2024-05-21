@@ -23,10 +23,31 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,  // Test for CSS files
+        test: /\.(scss)$/,
         use: [
-          'style-loader',  // Inject CSS into the DOM
-          'css-loader'  // Translates CSS into CommonJS
+          {
+            // Adds CSS to the DOM by injecting a `<style>` tag
+            loader: 'style-loader'
+          },
+          {
+            // Interprets `@import` and `url()` like `import/require()` and will resolve them
+            loader: 'css-loader'
+          },
+          {
+            // Loader for webpack to process CSS with PostCSS
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          },
+          {
+            // Loads a SASS/SCSS file and compiles it to CSS
+            loader: 'sass-loader'
+          }
         ]
       },
       {
