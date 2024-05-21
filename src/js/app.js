@@ -1,6 +1,5 @@
 import '../style/ui.scss';
 import SportsDataAPI from './components/Api';
-import Ui from './components/Ui';
 
 export default class App {
   constructor() {
