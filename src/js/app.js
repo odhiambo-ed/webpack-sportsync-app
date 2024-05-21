@@ -1,19 +1,31 @@
 import '../style/ui.scss';
 import SportsDataAPI from './components/Api';
+import DisplaySports from './ui/DisplaySports';
+import DisplayTeams from './ui/DisplayTeams';
+import DisplayPlayers from './ui/DisplayPlayers';
+import DisplayEvents from './ui/DisplayEvents';
+import DisplayLiveScores from './ui/DisplayLiveScores';
 
 export default class App {
   constructor() {
     this.api = new SportsDataAPI();
-    this.ui = new Ui();
+    this.displaySports = new DisplaySports();
+    this.displayTeams = new DisplayTeams();
+    this.displayPlayers = new DisplayPlayers();
+    this.displayEvents = new DisplayEvents();
+    this.displayLiveScores = new DisplayLiveScores();
   }
 
   async init() {
     try {
       const leagues = await this.api.getAllLeagues();
-      this.ui.displaySports(leagues);
+      this.displaySports.display(leagues);
       this.setupLoadMoreTeams();
+      this.setupPlayerFetch();
+      this.setupEventFetch();
+      this.setupLiveScores();
     } catch (error) {
-      this.ui.showError('Failed to load sports data. Please try again later.');
+      this.displaySports.showError('Failed to load sports data. Please try again later.');
     }
   }
 
@@ -24,9 +36,9 @@ export default class App {
     const fetchAndDisplayTeams = async (page) => {
       try {
         const teams = await this.api.fetchTeams(page);
-        this.ui.displayTeams(teams);
+        this.displayTeams.display(teams);
       } catch (error) {
-        this.ui.showError('Failed to load teams. Please try again later.');
+        this.displayTeams.showError('Failed to load teams. Please try again later.');
       }
     };
 
@@ -36,6 +48,33 @@ export default class App {
         currentPage++;
       });
       loadMoreButton.click(); // Load first set of teams on page load
+    }
+  }
+
+  async setupPlayerFetch() {
+    try {
+      const players = await this.api.fetchPlayers('133604');
+      this.displayPlayers.display(players);
+    } catch (error) {
+      this.displayPlayers.showError('Failed to load players. Please try again later.');
+    }
+  }
+
+  async setupEventFetch() {
+    try {
+      const events = await this.api.fetchEvents('133604');
+      this.displayEvents.display(events);
+    } catch (error) {
+      this.displayEvents.showError('Failed to load events. Please try again later.');
+    }
+  }
+
+  async setupLiveScores() {
+    try {
+      const scores = await this.api.fetchLiveScores();
+      this.displayLiveScores.display(scores);
+    } catch (error) {
+      this.displayLiveScores.showError('Failed to load live scores. Please try again later.');
     }
   }
 }
