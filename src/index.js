@@ -5,6 +5,7 @@ import './style/styles.scss';
 import 'bootstrap';
 import './style/bootstrap.scss';
 import './style/display-events.scss';
+import './style/display-players.scss';
 
 
 // Wait for the DOM to be fully loaded before initializing the app
