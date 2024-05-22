@@ -15,11 +15,11 @@ class DisplayEvents {
         </div>
         <ul class="list-group list-group-flush">
           <li class="d-flex flex-column list-group-item">
-            <div class="d-flex flex-row gap-1 align-items-center justify-content-center">
+            <div class="d-flex flex-row gap-1 align-items-center justify-content-between">
               <p>${event.dateEvent}</p>
               <img src="${event.strThumb}" alt="${event.strEvent}" style="max-width: 100px; max-height: 100px;">
             </div>
-            <p><a href="${event.strVideo}" target="_blank">Watch Highlights</a></p>
+            <p><a class="text-decoration-none" href="${event.strVideo}" target="_blank">Watch Highlights</a></p>
           </li>
         </ul>
       </div>`;
