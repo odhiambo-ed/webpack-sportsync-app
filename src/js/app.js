@@ -21,7 +21,6 @@ export default class App {
     try {
       await this.displaySports();
       this.setupLoadMoreTeams();
-      this.setupPlayerFetch();
       this.setupPlayerMilestonesFetch();
       this.setupEventHighlightsFetch();
       this.setupLiveScores();
