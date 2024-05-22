@@ -53,14 +53,14 @@ export default class App {
     }
   }
 
-  async setupPlayerFetch() {
-    try {
-      const players = await this.api.fetchPlayers('133604');
-      this.displayPlayers.display(players);
-    } catch (error) {
-      ErrorHandling.showError('Failed to load players. Please try again later.', 'main');
-    }
-  }
+  // async setupPlayerFetch() {
+  //   try {
+  //     const players = await this.api.fetchPlayers('133604');
+  //     this.displayPlayers.display(players);
+  //   } catch (error) {
+  //     ErrorHandling.showError('Failed to load players. Please try again later.', 'main');
+  //   }
+  // }
 
   async setupPlayerMilestonesFetch() {
     try {
