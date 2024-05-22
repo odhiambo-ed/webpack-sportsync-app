@@ -63,7 +63,7 @@ export default class App {
 
   async setupEventFetch() {
     try {
-      const events = await this.api.fetchEvents('133604');
+      const events = await this.api.fetchEvents('4328', '2023-2024'); // English Premier League 2023-2024
       this.displayEvents.display(events);
     } catch (error) {
       ErrorHandling.showError('Failed to load events. Please try again later.', 'main');
