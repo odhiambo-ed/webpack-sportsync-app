@@ -10,12 +10,15 @@ class DisplayPlayers {
     milestones.forEach(milestone => {
       output += `
         <li>
-          <h3>${milestone.strMilestone}</h3>
-          <p>Player: ${milestone.strPlayer}</p>
-          <p>Team: ${milestone.strTeam}</p>
-          <p>Date: ${milestone.dateMilestone}</p>
-          <img src="${milestone.strMilestoneLogo}" alt="${milestone.strMilestone}">
-        </li>`;
+          <h6>${milestone.strMilestone}</h6>
+          <div class="d-flex flex-row justify-content-between">
+              <div class="div">
+                  <p>Player: ${milestone.strPlayer}</p>
+                  <p>Team: ${milestone.strTeam}</p>
+              </div>
+              <img class="rounded-circle img-fluid" src="${milestone.strMilestoneLogo}" alt="${milestone.strMilestone}">
+          </div>
+        </li> <hr>`;
     });
     output += '</ul>';
     this.playersContainer.innerHTML = output;
