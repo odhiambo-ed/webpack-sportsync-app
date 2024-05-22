@@ -8,7 +8,7 @@ class DisplayTeams {
 
     teams.forEach(team => {
       const teamCard = document.createElement('div');
-      teamCard.className = 'col-md-3 team-card animate__animated animate__fadeInUp';
+      teamCard.className = 'col-md-2 team-card animate__animated animate__fadeInUp';
       teamCard.innerHTML = `
         <div class="card">
           <img src="${team.strTeamBadge}" class="card-img-top" alt="${team.strTeam}">
