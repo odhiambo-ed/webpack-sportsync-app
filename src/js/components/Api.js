@@ -22,7 +22,12 @@ class SportsDataAPI {
 
   async fetchLiveScores() {
     const response = await axios.get(`${this.baseURL}latestsoccer.php`);
-    return response.data.teams.Match; 
+    return response.data.teams.Match;
+  }
+
+  async fetchEvents(leagueId, season) {
+    const response = await axios.get(`${this.baseURL}eventsseason.php?id=${leagueId}&s=${season}`);
+    return response.data.events;
   }
 }
 
