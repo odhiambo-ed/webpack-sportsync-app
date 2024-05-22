@@ -66,18 +66,6 @@ export default class App {
     }
   }
 
-  // Uncomment and adjust as necessary
-  // async setupPlayerFetch() {
-  //   try {
-  //     const players = await this.api.fetchPlayers('133604');
-  //     console.log('Fetched players:', players);
-  //     this.displayPlayers.display(players);
-  //   } catch (error) {
-  //     console.error('Failed to load players:', error);
-  //     ErrorHandling.showError('Failed to load players. Please try again later.', 'main');
-  //   }
-  // }
-
   async setupPlayerMilestonesFetch() {
     try {
       const milestones = await this.api.fetchPlayerMilestones('34161397'); // Player ID for Richarlison
