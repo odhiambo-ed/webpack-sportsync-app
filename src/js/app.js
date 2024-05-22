@@ -20,7 +20,7 @@ export default class App {
   async init() {
     try {
       await this.displaySports();
-      this.setupLoadMoreTeams();
+      await this.setupLoadMoreTeams();
       this.setupPlayerMilestonesFetch();
       this.setupEventHighlightsFetch();
       this.setupLiveScores();
@@ -43,25 +43,19 @@ export default class App {
 
   async setupLoadMoreTeams() {
     const loadMoreButton = document.getElementById('loadMoreTeams');
-    let currentPage = 1;
+    try {
+      const teams = await this.api.fetchTeams(1); // Fetch the first set of teams
+      console.log('Fetched teams:', teams); // eslint-disable-line no-console
+      this.displayTeams.display(teams);
 
-    const fetchAndDisplayTeams = async (page) => {
-      try {
-        const teams = await this.api.fetchTeams(page);
-        console.log('Fetched teams for page', page, ':', teams); // eslint-disable-line no-console
-        this.displayTeams.display(teams);
-      } catch (error) {
-        console.error('Failed to load teams for page', page, ':', error); // eslint-disable-line no-console
-        ErrorHandling.showError('Failed to load teams. Please try again later.', 'main');
+      if (loadMoreButton) {
+        loadMoreButton.addEventListener('click', () => {
+          this.displayTeams.loadMore();
+        });
       }
-    };
-
-    if (loadMoreButton) {
-      loadMoreButton.addEventListener('click', () => {
-        fetchAndDisplayTeams(currentPage);
-        currentPage++;
-      });
-      loadMoreButton.click(); // Load first set of teams on page load
+    } catch (error) {
+      console.error('Failed to load teams:', error); // eslint-disable-line no-console
+      ErrorHandling.showError('Failed to load teams. Please try again later.', 'main');
     }
   }
 
