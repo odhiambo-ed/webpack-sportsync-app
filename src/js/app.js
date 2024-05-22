@@ -5,6 +5,7 @@ import DisplayTeams from './ui/DisplayTeams';
 import DisplayPlayers from './ui/DisplayPlayers';
 import DisplayEvents from './ui/DisplayEvents';
 import DisplayLiveScores from './ui/DisplayLiveScores';
+import ErrorHandling from './ui/ErrorHandling';
 
 export default class App {
   constructor() {
@@ -25,7 +26,7 @@ export default class App {
       this.setupEventFetch();
       this.setupLiveScores();
     } catch (error) {
-      this.displaySports.showError('Failed to load sports data. Please try again later.');
+      ErrorHandling.showError('Failed to load sports data. Please try again later.', 'main');
     }
   }
 
@@ -38,7 +39,7 @@ export default class App {
         const teams = await this.api.fetchTeams(page);
         this.displayTeams.display(teams);
       } catch (error) {
-        this.displayTeams.showError('Failed to load teams. Please try again later.');
+        ErrorHandling.showError('Failed to load teams. Please try again later.', 'main');
       }
     };
 
@@ -56,7 +57,7 @@ export default class App {
       const players = await this.api.fetchPlayers('133604');
       this.displayPlayers.display(players);
     } catch (error) {
-      this.displayPlayers.showError('Failed to load players. Please try again later.');
+      ErrorHandling.showError('Failed to load players. Please try again later.', 'main');
     }
   }
 
@@ -65,7 +66,7 @@ export default class App {
       const events = await this.api.fetchEvents('133604');
       this.displayEvents.display(events);
     } catch (error) {
-      this.displayEvents.showError('Failed to load events. Please try again later.');
+      ErrorHandling.showError('Failed to load events. Please try again later.', 'main');
     }
   }
 
@@ -74,7 +75,7 @@ export default class App {
       const scores = await this.api.fetchLiveScores();
       this.displayLiveScores.display(scores);
     } catch (error) {
-      this.displayLiveScores.showError('Failed to load live scores. Please try again later.');
+      ErrorHandling.showError('Failed to load live scores. Please try again later.', 'main');
     }
   }
 }
