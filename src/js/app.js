@@ -19,15 +19,23 @@ export default class App {
 
   async init() {
     try {
-      const leagues = await this.api.getAllLeagues();
-      this.displaySports.display(leagues);
+      this.displaySports();
       this.setupLoadMoreTeams();
       this.setupPlayerFetch();
       this.setupPlayerMilestonesFetch();
       this.setupEventHighlightsFetch();
       this.setupLiveScores();
     } catch (error) {
-      ErrorHandling.showError('Failed to load sports data. Please try again later.', 'main');
+      ErrorHandling.showError('Failed to initialize the application. Please try again later or refresh the page.');
+    }
+  }
+
+  async displaySports() {
+    try {
+      const leagues = await this.api.getAllLeagues();
+      this.displaySports.display(leagues);
+    } catch (error) {
+      ErrorHandling.showError('Failed to load sports data. Please try again later.');
     }
   }
 
