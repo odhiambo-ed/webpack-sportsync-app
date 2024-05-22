@@ -6,7 +6,7 @@ class DisplayLiveScores {
   display(scores) {
     if (!this.content) return;
 
-    let output = '<h2>Live Scores</h2><ul>';
+    let output = '<ul>';
     scores.forEach(match => {
       output += `
         <li>

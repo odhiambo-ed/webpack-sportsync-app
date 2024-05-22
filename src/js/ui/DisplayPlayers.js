@@ -6,7 +6,7 @@ class DisplayPlayers {
   displayMilestones(milestones) {
     if (!this.playersContainer) return;
 
-    let output = '<h2>Player Milestones</h2><ul>';
+    let output = '<ul>';
     milestones.forEach(milestone => {
       output += `
         <li>

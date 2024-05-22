@@ -6,7 +6,7 @@ class DisplayEvents {
   display(eventHighlights) {
     if (!this.content) return;
 
-    let output = '<h2>Event Highlights</h2><ul>';
+    let output = '<ul>';
     eventHighlights.forEach(event => {
       output += `
         <li>
