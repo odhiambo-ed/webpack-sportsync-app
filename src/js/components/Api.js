@@ -29,6 +29,11 @@ class SportsDataAPI {
     const response = await axios.get(`${this.baseURL}eventshighlights.php?i=${leagueId}`);
     return response.data.tvhighlights;
   }
+
+  async fetchPlayerMilestones(playerId) {
+    const response = await axios.get(`${this.baseURL}lookupmilestones.php?id=${playerId}`);
+    return response.data.milestones;
+  }
 }
 
 export default SportsDataAPI;
