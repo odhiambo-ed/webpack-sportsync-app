@@ -3,16 +3,15 @@ class DisplayEvents {
     this.content = document.getElementById('eventsContainer');
   }
 
-  display(events) {
+  display(eventHighlights) {
     if (!this.content) return;
 
-    let output = '<h2>Upcoming Events</h2><ul>';
-    events.forEach(event => {
+    let output = '<h2>Event Highlights</h2><ul>';
+    eventHighlights.forEach(event => {
       output += `
         <li>
           <h3>${event.strEvent}</h3>
-          <p>${event.dateEvent} - ${event.strTime}</p>
-          <p>${event.strHomeTeam} vs ${event.strAwayTeam}</p>
+          <p>${event.dateEvent}</p>
           <img src="${event.strThumb}" alt="${event.strEvent}">
           <p><a href="${event.strVideo}" target="_blank">Watch Highlights</a></p>
         </li>`;
