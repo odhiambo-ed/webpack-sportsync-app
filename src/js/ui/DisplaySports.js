@@ -1,6 +1,6 @@
 class DisplaySports {
   constructor() {
-    this.content = document.getElementById('main');
+    this.content = document.getElementById('leaguesContainer');
     this.leagues = [];
     this.itemsPerPage = 5;
     this.currentPage = 1;
@@ -17,7 +17,7 @@ class DisplaySports {
     const end = this.currentPage * this.itemsPerPage;
     const paginatedLeagues = this.leagues.slice(start, end);
 
-    let output = '<h2>All Leagues</h2><ul>';
+    let output = '<h2 class="animate__animated animate__fadeInUp">All Leagues</h2><ul>';
     paginatedLeagues.forEach(league => {
       output += `
         <li>
