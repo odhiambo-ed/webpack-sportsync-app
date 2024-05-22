@@ -13,12 +13,16 @@ class SportsDataAPI {
   async fetchTeams(page) {
     const response = await axios.get(`${this.baseURL}search_all_teams.php?l=English%20Premier%20League&page=${page}`);
     return response.data.teams;
-  
   }
 
   async searchTeams(teamName) {
     const response = await axios.get(`${this.baseURL}searchteams.php?t=${teamName}`);
     return response.data.teams;
+  }
+
+  async fetchLiveScores() {
+    const response = await axios.get(`${this.baseURL}latestsoccer.php`);
+    return response.data.teams.Match; 
   }
 }
 
