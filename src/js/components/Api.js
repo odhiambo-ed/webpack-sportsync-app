@@ -6,8 +6,8 @@ class SportsDataAPI {
   }
 
   async getAllLeagues() {
-    const response = await axios.get(`${this.baseURL}all_leagues.php`);
-    return response.data.leagues;
+    const response = await axios.get(`${this.baseURL}search_all_leagues.php?c=England&s=Soccer`);
+    return response.data.countries;
   }
 
   async fetchTeams(page) {
