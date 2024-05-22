@@ -1,22 +1,24 @@
 class DisplayEvents {
   constructor() {
-    this.eventsContainer = document.getElementById('eventsContainer');
+    this.content = document.getElementById('eventsContainer');
   }
 
   display(events) {
-    if (!this.eventsContainer) return;
+    if (!this.content) return;
 
     let output = '<h2>Upcoming Events</h2><ul>';
     events.forEach(event => {
       output += `
         <li>
           <h3>${event.strEvent}</h3>
-          <p>Date: ${event.dateEvent}</p>
-          <p>Venue: ${event.strVenue}</p>
+          <p>${event.dateEvent} - ${event.strTime}</p>
+          <p>${event.strHomeTeam} vs ${event.strAwayTeam}</p>
+          <img src="${event.strThumb}" alt="${event.strEvent}">
+          <p><a href="${event.strVideo}" target="_blank">Watch Highlights</a></p>
         </li>`;
     });
     output += '</ul>';
-    this.eventsContainer.innerHTML = output;
+    this.content.innerHTML = output;
   }
 }
 
