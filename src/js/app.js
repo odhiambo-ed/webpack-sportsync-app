@@ -23,7 +23,7 @@ export default class App {
       this.displaySports.display(leagues);
       this.setupLoadMoreTeams();
       this.setupPlayerFetch();
-      this.setupEventFetch();
+      this.setupEventHighlightsFetch();
       this.setupLiveScores();
     } catch (error) {
       ErrorHandling.showError('Failed to load sports data. Please try again later.', 'main');
@@ -61,12 +61,12 @@ export default class App {
     }
   }
 
-  async setupEventFetch() {
+  async setupEventHighlightsFetch() {
     try {
-      const events = await this.api.fetchEvents('4328', '2023-2024'); // English Premier League 2023-2024
-      this.displayEvents.display(events);
+      const eventHighlights = await this.api.fetchEventHighlights('4329'); // English League Championship
+      this.displayEvents.display(eventHighlights);
     } catch (error) {
-      ErrorHandling.showError('Failed to load events. Please try again later.', 'main');
+      ErrorHandling.showError('Failed to load event highlights. Please try again later.', 'main');
     }
   }
 
