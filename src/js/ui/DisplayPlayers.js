@@ -10,7 +10,7 @@ class DisplayPlayers {
     milestones.forEach(milestone => {
       output += `
         <li>
-          <h6>${milestone.strMilestone}</h6>
+          <h6 class="mb-4">${milestone.strMilestone}</h6>
           <div class="d-flex flex-row justify-content-between">
               <div class="div">
                   <p>Player: ${milestone.strPlayer}</p>
