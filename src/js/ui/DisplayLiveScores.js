@@ -1,6 +1,6 @@
 class DisplayLiveScores {
   constructor() {
-    this.content = document.getElementById('main');
+    this.content = document.getElementById('live');
   }
 
   display(scores) {
