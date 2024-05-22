@@ -25,9 +25,9 @@ class SportsDataAPI {
     return response.data.teams.Match;
   }
 
-  async fetchEvents(leagueId, season) {
-    const response = await axios.get(`${this.baseURL}eventsseason.php?id=${leagueId}&s=${season}`);
-    return response.data.events;
+  async fetchEventHighlights(leagueId) {
+    const response = await axios.get(`${this.baseURL}eventshighlights.php?i=${leagueId}`);
+    return response.data.tvhighlights;
   }
 }
 
