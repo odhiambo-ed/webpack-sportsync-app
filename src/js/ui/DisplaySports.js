@@ -24,6 +24,7 @@ class DisplaySports {
           <h3>${league.strLeague}</h3>
           <p>Sport: ${league.strSport}</p>
           <p>Alternate Names: ${league.strLeagueAlternate || 'N/A'}</p>
+          <img src="${league.strBadge}" alt="${league.strLeague}" />
         </li>`;
     });
     output += '</ul>';
