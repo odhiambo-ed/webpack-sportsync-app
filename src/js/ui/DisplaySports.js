@@ -17,7 +17,7 @@ class DisplaySports {
     const end = this.currentPage * this.itemsPerPage;
     const paginatedLeagues = this.leagues.slice(start, end);
 
-    let output = '<h2 class="animate__animated animate__fadeInUp text-uppercase">Top Leagues</h2><hr><ul class="d-flex flex-row">';
+    let output = '<h2 class="animate__animated animate__fadeInUp text-uppercase">Top Leagues</h2><hr><ul class="d-flex flex-row justify-content-center">';
     paginatedLeagues.forEach(league => {
       output += `
         <li>
