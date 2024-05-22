@@ -7,7 +7,8 @@ class DisplayEvents {
     if (!this.content) return;
 
     let output = '';
-    eventHighlights.forEach(event => {
+    // Display only the first 3 items
+    eventHighlights.slice(0, 3).forEach(event => {
       output += `<div class="card" style="width: 90%">
         <div class="card-header">
           ${event.strEvent}
