@@ -7,7 +7,7 @@ class DisplayLiveScores {
     if (!this.content) return;
 
     let output = '<ul>';
-    scores.forEach(match => {
+    scores.slice(0,1).forEach(match => {
       output += `
         <li>
           <h3>${match.HomeTeam} vs ${match.AwayTeam}</h3>
@@ -23,10 +23,6 @@ class DisplayLiveScores {
             <li>Home Goals: ${match.HomeGoalDetails || 'N/A'}</li>
             <li>Away Goals: ${match.AwayGoalDetails || 'N/A'}</li>
           </ul>
-          <p>Home Yellow Cards: ${match.HomeTeamYellowCardDetails || 'None'}</p>
-          <p>Away Yellow Cards: ${match.AwayTeamYellowCardDetails || 'None'}</p>
-          <p>Home Red Cards: ${match.HomeTeamRedCardDetails || 'None'}</p>
-          <p>Away Red Cards: ${match.AwayTeamRedCardDetails || 'None'}</p>
         </li>`;
     });
     output += '</ul>';
