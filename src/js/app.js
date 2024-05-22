@@ -23,6 +23,7 @@ export default class App {
       this.displaySports.display(leagues);
       this.setupLoadMoreTeams();
       this.setupPlayerFetch();
+      this.setupPlayerMilestonesFetch();
       this.setupEventHighlightsFetch();
       this.setupLiveScores();
     } catch (error) {
@@ -58,6 +59,15 @@ export default class App {
       this.displayPlayers.display(players);
     } catch (error) {
       ErrorHandling.showError('Failed to load players. Please try again later.', 'main');
+    }
+  }
+
+  async setupPlayerMilestonesFetch() {
+    try {
+      const milestones = await this.api.fetchPlayerMilestones('34161397'); // Player ID for Richarlison
+      this.displayPlayers.displayMilestones(milestones);
+    } catch (error) {
+      ErrorHandling.showError('Failed to load player milestones. Please try again later.', 'main');
     }
   }
 
