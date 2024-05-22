@@ -19,7 +19,7 @@ export default class App {
 
   async init() {
     try {
-      this.displaySports();
+      await this.displaySports();
       this.setupLoadMoreTeams();
       this.setupPlayerFetch();
       this.setupPlayerMilestonesFetch();
