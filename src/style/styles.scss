@@ -2,11 +2,20 @@ body {
   scroll-behavior: smooth;
 }
 .hero {
-  background: url("../assets/images/hero-bg.jpeg") no-repeat center center;
+  background: url("../assets/images/hero-bg2.jpeg") no-repeat center center;
   background-size: cover;
   color: white;
   padding: 100px 0;
   position: relative;
   overflow: hidden;
-  max-height: 700px;
+  max-height: 500px;
+  z-index: -1;
+  margin-bottom: -10px;
+  mask-image: linear-gradient(to bottom, rgb(0, 86, 245), rgba(41, 111, 240, 0.1));
+}
+
+.bg-opacity {
+  background-color: rgba(4, 115, 234, 0.7);
+  padding: 20px;
+  border-radius: 5px;
 }
