@@ -7,13 +7,14 @@
     <link rel="icon" href="./assets/images/favicon.ico">
     <title>Sport Sync App</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div id="main" class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Sports Sync App</a>
+                <a class="navbar-brand text-decoration-none" href="#">Sports Sync App</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -22,16 +23,19 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active text-decoration-none" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
+                            <a class="nav-link text-decoration-none" href="#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link text-decoration-none" href="#features">Features</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link text-decoration-none" href="#leagues">Leagues</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-decoration-none" href="#teams">Teams</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -115,18 +119,67 @@
 
         <!-- Contact Section -->
         <section id="contact" class="section bg-light text-center my-5">
-            <div class="container">
+            <div class="container m-5">
                 <h2 class="animate__animated animate__fadeInUp">Contact Us</h2>
                 <p class="animate__animated animate__fadeInUp animate__delay-1s">Email: support@sportssyncapp.com</p>
             </div>
         </section>
 
         <!-- Footer -->
-        <footer class="bg-dark text-white text-center py-3">
+        <section id="footer">
+        <div class="main-footer">
+            <div class="logoinfo" data-aos="fade-up">
+                <h2>SPORTS SYNC APP</h2>
+                <p>By Edward</p>
+
+                <div class="contact-details">
+                    <h1>Contact Us</h1>
+                    <li>
+                        <div class="fa fa-phone"></div><a href="tel:+919326048690">+254 726 900598</a>
+                    </li>
+                    <li>
+                        <div class="fa fa-envelope"></div><a
+                            href="mailto:odhiambo.edward111@gmail.com">odhiambo.edward111@gmail.com</a>
+                    </li>
+                    </li>
+                </div>
+            </div>
+            <div class="com " data-aos="fade-up">
+                <h1>Quick Links</h1>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#leagues">Leagues</a></li>
+                    <li><a href="#teams">Teams</a></li>
+                </ul>
+            </div>
+            <div class="info" data-aos="fade-up">
+                <h1>Social Media</h1>
+                <div class="sociallogos">
+                    <div class="logobox">
+                        <a href="https://github.com/odhiambo-ed" target="_blank" class="fa fa-github"></a>
+                        <a href="https://www.linkedin.com/in/edward-odhiambo/" target="_blank" class="fa fa-linkedin"></a>
+                        <a href="https://x.com/odhiambo_ed" class="fa fa-twitter"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>© Edward Copyright <span id="currentYear"></span> All Rights Reserved</footer>
+    </section>
+
+    <script>
+        // Get the current year
+        var currentYear = new Date().getFullYear();
+
+        // Update the content of the element with the current year
+        document.getElementById("currentYear").textContent = currentYear;
+    </script>
+        <!-- <footer class="bg-dark text-white text-center py-3">
             <div class="container">
                 &copy; 2024 Sports Sync App. All Rights Reserved.
             </div>
-        </footer>
+        </footer> -->
     </div>
 </body>
 
