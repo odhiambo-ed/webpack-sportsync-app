@@ -1,11 +1,9 @@
 // Import the main application class
 import App from './js/app';
-import './style/global.scss';
-import './style/styles.scss';
-import 'bootstrap';
-import './style/bootstrap.scss';
-import './style/display-events.scss';
-import './style/display-players.scss';
+import './style/global.css';
+import './style/styles.css';
+import './style/display-events.css';
+import './style/display-players.css';
 
 
 // Wait for the DOM to be fully loaded before initializing the app
