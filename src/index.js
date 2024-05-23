@@ -4,6 +4,9 @@ import './style/global.css';
 import './style/styles.css';
 import './style/display-events.css';
 import './style/display-players.css';
+import '@fontsource/poppins'; // Defaults to weight 400 with normal style.
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/700.css';
 
 
 // Wait for the DOM to be fully loaded before initializing the app

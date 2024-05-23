@@ -9,8 +9,6 @@ body {
   position: relative;
   overflow: hidden;
   max-height: 500px;
-  z-index: -1;
-  margin-bottom: -5px;
   mask-image: linear-gradient(to bottom, rgb(0, 86, 245), rgba(32, 91, 241, 0));
 }
 

@@ -30,7 +30,14 @@ module.exports = {
         ]
       },
       {
-        test: /\.(gif|png|avif|jpe?g)$/,  // Test for image files
+        test: /\.(woff|woff2|eot|ttf|otf)$/,  // Test for font files
+        type: 'asset/resource',  // The type of module created
+        generator: {
+          filename: 'assets/fonts/[name][ext]',  // Output path and filename for fonts
+        },
+      },
+      {
+        test: /\.(gif|png|avif|jpe?g|svg)$/,  // Test for image files
         type: 'asset/resource',  // The type of module created
         generator: {
           filename: 'assets/images/[name][ext]',  // Output path and filename for images
