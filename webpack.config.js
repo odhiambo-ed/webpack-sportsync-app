@@ -2,54 +2,32 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',  // The output filename for the bundled JavaScript
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',  // The public URL of the output directory when referenced in a browser
+    publicPath: '/',
   },
-  devtool: 'eval-source-map',  // Source map mode for development
+  devtool: 'eval-source-map',
   plugins: [
-    new ESLintPlugin(),  // Plugin for linting JavaScript
-    new CleanWebpackPlugin({ verbose: true }),  // Clean the output directory before emit
+    new ESLintPlugin(),
+    new CleanWebpackPlugin({ verbose: true }),
     new HtmlWebpackPlugin({
-      title: 'Sport Sync App',  // The title of the generated HTML page
-      template: './src/index.html',  // Template file for the HTML
-      inject: 'body'  // Inject all assets into the body element
-    })
+      title: 'Sport Sync App',
+      template: './src/index.html',
+      inject: 'body',
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.(gif|png|avif|jpe?g)$/,  // Test for image files
-        type: 'asset/resource',  // The type of module created
-        generator: {
-          filename: 'assets/images/[name][ext]',  // Output path and filename for images
-        },
-      },
-      {
-        test: /\.html$/,  // Test for HTML files
-        use: [
-          'html-loader'  // Exports HTML as a string
-        ]
-      },
-    ]
-  },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),  // Directory for static files
-    },
-    port: 9000,  // Port for the development server
-    historyApiFallback: true,  // Enable support for history API fallback
-    open: true,  // Open the browser after server starts
-  },
-};
+          
+          }
