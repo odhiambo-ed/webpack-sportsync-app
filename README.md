@@ -1,6 +1,6 @@
 ## Sneak Peek
 
-![Screenshot](screenshot-sports.png)
+![Screenshot](Screenshot-sports.png)
 
 # Animal Classes
 
